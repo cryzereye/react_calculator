@@ -18,9 +18,12 @@ class App extends Component {
       <div className="App">
         <Container>
           <Row>
-        
+            <h1>{this.state.expression}</h1>
+            <h2>{this.state.answer}</h2>
           </Row>
-          <CalcButtons/>
+          <Row className="justify-content-md-center">
+            <CalcButtons/>
+          </Row>
         </Container>
       </div>
     );

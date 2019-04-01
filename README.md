@@ -1,1 +1,1 @@
-A basic calculator built using ReactJS and React Bootstrap (hopefully)
+A basic calculator based on Oneplus 6T calculator app, built using ReactJS and React Bootstrap (hopefully)
