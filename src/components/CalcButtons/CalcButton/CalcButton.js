@@ -1,14 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
 
 const calcbutton = (props) => {
+  let variant = '';
+  
+  switch (props.value){
+    case '=':
+      variant = 'danger';
+      break;
+    default:
+      variant = 'outline-dark';
+      break;
+  }
+
   return (
-      <Col>
-        <button value={props.value}>
-            <h1>{props.value}</h1>
-        </button>
-      </Col>
+    <Button value={props.value} variant={variant} block>
+      {props.value}
+    </Button>
+
   );
 }
 
