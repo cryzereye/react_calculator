@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import CalcButtons from '../components/CalcButtons/CalcButtons';
+import Alert from 'react-bootstrap/Alert';
 
 import './App.css';
 
@@ -27,8 +28,17 @@ class App extends Component {
         </header>
         <Container>
           <Row>
-            <h1>{this.state.expression}</h1>
-            <h2>{this.state.answer}</h2>
+            <Col 
+              lg={{span: 4, offset: 4}}
+              md={{span: 4, offset: 4}}
+            >
+              <Alert variant='dark'>
+                <Alert.Heading>
+                  <h1>{this.state.expression}</h1>
+                </Alert.Heading>
+                <p>{this.state.answer}</p>
+              </Alert>
+            </Col>
           </Row>
           <Row>
             <CalcButtons/>

@@ -8,16 +8,24 @@ const calcbutton = (props) => {
     case '=':
       variant = 'danger';
       break;
+    case 'del':
+      variant = 'primary';
+      break;
+    case '+':
+    case '-':
+    case 'x':
+    case '/':
+      variant = 'info';
+      break;
     default:
       variant = 'outline-dark';
       break;
   }
 
   return (
-    <Button value={props.value} variant={variant} block>
+    <Button variant={variant}>
       {props.value}
     </Button>
-
   );
 }
 
