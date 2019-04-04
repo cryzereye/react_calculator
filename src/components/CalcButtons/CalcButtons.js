@@ -1,5 +1,4 @@
 import React from 'react';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import CalcButton from './CalcButton/CalcButton';
@@ -10,34 +9,34 @@ const calcbuttons = (props) => {
       lg={{span: 6, offset: 3}}
       md={{span: 6, offset: 3}}>
         <ButtonGroup vertical size='lg'>
-          <CalcButton value='7'/>
-          <CalcButton value='4'/>
-          <CalcButton value='1'/>
-          <CalcButton value='.'/>
+          <CalcButton symbol='7' clicked={(symbol) => props.clicked(symbol)}/>
+          <CalcButton symbol='4' clicked={(symbol) => props.clicked(symbol)}/>
+          <CalcButton symbol='1' clicked={(symbol) => props.clicked(symbol)}/>
+          <CalcButton symbol='.' clicked={(symbol) => props.clicked(symbol)}/>
         </ButtonGroup>
         <ButtonGroup vertical size='lg'>
-          <CalcButton value='8'/>
-          <CalcButton value='5'/>
-          <CalcButton value='2'/>
-          <CalcButton value='0'/>
+          <CalcButton symbol='8' clicked={(symbol) => props.clicked(symbol)}/>
+          <CalcButton symbol='5' clicked={(symbol) => props.clicked(symbol)}/>
+          <CalcButton symbol='2' clicked={(symbol) => props.clicked(symbol)}/>
+          <CalcButton symbol='0' clicked={(symbol) => props.clicked(symbol)}/>
         </ButtonGroup>
         <ButtonGroup vertical size='lg'>
-          <CalcButton value='9'/>
-          <CalcButton value='6'/>
-          <CalcButton value='3'/>
-          <CalcButton value='&nbsp;'/>
+          <CalcButton symbol='9' clicked={(symbol) => props.clicked(symbol)}/>
+          <CalcButton symbol='6' clicked={(symbol) => props.clicked(symbol)}/>
+          <CalcButton symbol='3' clicked={(symbol) => props.clicked(symbol)}/>
+          <CalcButton symbol='&nbsp;' clicked={(symbol) => props.clicked(symbol)}/>
         </ButtonGroup>
         <ButtonGroup vertical size='lg'>
-          <CalcButton value='/'/>
-          <CalcButton value='x'/>
-          <CalcButton value='-'/>
-          <CalcButton value='+'/>
+          <CalcButton symbol='/' clicked={(symbol) => props.clicked(symbol)}/>
+          <CalcButton symbol='*' clicked={(symbol) => props.clicked(symbol)}/>
+          <CalcButton symbol='-' clicked={(symbol) => props.clicked(symbol)}/>
+          <CalcButton symbol='+' clicked={(symbol) => props.clicked(symbol)}/>
         </ButtonGroup>
         <ButtonGroup vertical size='lg'>
-          <CalcButton value='<'/>
-          <CalcButton value='&nbsp;'/>
-          <CalcButton value='&nbsp;'/>
-          <CalcButton value='='/>
+          <CalcButton symbol='<' clicked={(symbol) => props.clicked(symbol)}/>
+          <CalcButton symbol='&nbsp;' clicked={(symbol) => props.clicked(symbol)}/>
+          <CalcButton symbol='&nbsp;' clicked={(symbol) => props.clicked(symbol)}/>
+          <CalcButton symbol='=' clicked={(symbol) => props.clicked(symbol)}/>
         </ButtonGroup>
     </Col>
   );

@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import CalcButtons from '../components/CalcButtons/CalcButtons';
 import Alert from 'react-bootstrap/Alert';
+import math from 'mathjs';
 
 import './App.css';
 
@@ -13,6 +14,35 @@ class App extends Component {
     expression: '',
     answer: 0,
     history: []
+  }
+
+  editExpression = (symbol) => {
+    //let expressionObject = {...this.state.expression};
+    let expression = this.state.expression.slice();
+    let answer;
+    let prevanswer;
+    switch(symbol){
+      case '<':
+        expression = expression.substring(0,expression.length - 1);
+        break;
+      default:
+        expression += symbol;
+        break;
+    }
+    prevanswer = answer;
+    try {
+      answer = math.eval(expression);
+      this.setState({
+        answer: answer,
+      });
+    }
+    catch(err){
+      answer = prevanswer;
+    }
+    
+    this.setState({
+      expression: expression,
+    });
   }
 
   render() {
@@ -41,7 +71,7 @@ class App extends Component {
             </Col>
           </Row>
           <Row>
-            <CalcButtons/>
+            <CalcButtons clicked={this.editExpression}/>
           </Row>
         </Container>
       </div>

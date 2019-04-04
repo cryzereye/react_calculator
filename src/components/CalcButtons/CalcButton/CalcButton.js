@@ -3,8 +3,11 @@ import Button from 'react-bootstrap/Button';
 
 const calcbutton = (props) => {
   let variant = '';
-  
-  switch (props.value){
+  let blank = false;
+  switch (props.symbol){
+    case '&nbsp;':
+      blank = true;
+      break;
     case '=':
       variant = 'danger';
       break;
@@ -13,7 +16,7 @@ const calcbutton = (props) => {
       break;
     case '+':
     case '-':
-    case 'x':
+    case '*':
     case '/':
       variant = 'info';
       break;
@@ -22,9 +25,18 @@ const calcbutton = (props) => {
       break;
   }
 
+  
+  if( blank ){
+    return (
+      <Button variant={variant} onClick={() => props.clicked(props.symbol)} disabled>
+        {props.symbol}
+      </Button>
+    );
+  }
+
   return (
-    <Button variant={variant}>
-      {props.value}
+    <Button variant={variant} onClick={() => props.clicked(props.symbol)} >
+      {props.symbol}
     </Button>
   );
 }
