@@ -34,7 +34,7 @@ const calcbuttons = (props) => {
         </ButtonGroup>
         <ButtonGroup vertical size='lg'>
           <CalcButton symbol='<' clicked={(symbol) => props.clicked(symbol)}/>
-          <CalcButton symbol='&nbsp;' clicked={(symbol) => props.clicked(symbol)}/>
+          <CalcButton symbol='C' clicked={(symbol) => props.clicked(symbol)}/>
           <CalcButton symbol='&nbsp;' clicked={(symbol) => props.clicked(symbol)}/>
           <CalcButton symbol='=' clicked={(symbol) => props.clicked(symbol)}/>
         </ButtonGroup>

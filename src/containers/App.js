@@ -11,25 +11,36 @@ import './App.css';
 
 class App extends Component {
   state = {
-    expression: '',
-    answer: 0,
+    expression: '0',
+    answer: '0',
     history: []
   }
 
   editExpression = (symbol) => {
     //let expressionObject = {...this.state.expression};
     let expression = this.state.expression.slice();
-    let answer;
-    let prevanswer;
+    let answer = this.state.answer;
+    let prevanswer = this.state.answer;
+    if(expression === '0'){
+      expression = '';
+    }
     switch(symbol){
       case '<':
-        expression = expression.substring(0,expression.length - 1);
+        expression = expression.substring(0 ,expression.length - 1);
+        break;
+      case 'C':
+        expression = '0';
+        answer = '0';
+        break;
+      case '=':
+        expression = answer.toString();
+        answer = '0';
         break;
       default:
         expression += symbol;
         break;
     }
-    prevanswer = answer;
+    
     try {
       answer = math.eval(expression);
       this.setState({

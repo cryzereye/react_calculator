@@ -11,7 +11,8 @@ const calcbutton = (props) => {
     case '=':
       variant = 'danger';
       break;
-    case 'del':
+    case '<':
+    case 'C':
       variant = 'primary';
       break;
     case '+':
@@ -28,7 +29,7 @@ const calcbutton = (props) => {
   
   if( blank ){
     return (
-      <Button variant={variant} onClick={() => props.clicked(props.symbol)} disabled>
+      <Button variant={variant} disabled>
         {props.symbol}
       </Button>
     );
